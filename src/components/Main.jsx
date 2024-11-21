@@ -1,3 +1,9 @@
+import ToDoList from "./ToDoList";
+
 export default function Main() {
-  return <main></main>;
+  return (
+    <main>
+      <ToDoList />
+    </main>
+  );
 }
