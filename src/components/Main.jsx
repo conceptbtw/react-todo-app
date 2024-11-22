@@ -2,7 +2,7 @@ import ToDoList from "./ToDoList";
 
 export default function Main() {
   return (
-    <main>
+    <main className="">
       <ToDoList />
     </main>
   );
