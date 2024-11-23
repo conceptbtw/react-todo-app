@@ -4,10 +4,10 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <>
+    <div className="h-svh flex flex-col">
       <Header />
       <Main />
       <Footer />
-    </>
+    </div>
   );
 }
