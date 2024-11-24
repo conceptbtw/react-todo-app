@@ -1,4 +1,4 @@
-export default function ToDoItem() {
+const ToDoItem = () => {
   const buttonStyles = "border rounded";
 
   return (
@@ -15,4 +15,6 @@ export default function ToDoItem() {
       </button>
     </li>
   );
-}
+};
+
+export default ToDoItem;

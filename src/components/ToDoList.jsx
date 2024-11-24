@@ -1,3 +1,5 @@
-export default function ToDoList() {
+const ToDoList = () => {
   return <ul className=""></ul>;
-}
+};
+
+export default ToDoList;
