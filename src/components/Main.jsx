@@ -10,7 +10,13 @@ const Main = () => {
     setToDos([...toDos, { id: uuidv4(), toDo, isCompleted: false }]);
   };
 
-  const toggleToDo = () => {};
+  const toggleToDo = (id) => {
+    setToDos(
+      toDos.map((toDo) =>
+        toDo.id === id ? { ...toDo, isCompleted: !toDo.isCompleted } : toDo
+      )
+    );
+  };
 
   const editToDo = () => {};
 
