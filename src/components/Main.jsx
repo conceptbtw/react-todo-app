@@ -20,7 +20,9 @@ const Main = () => {
 
   const editToDo = () => {};
 
-  const deleteToDo = () => {};
+  const deleteToDo = (id) => {
+    setToDos(toDos.filter((toDo) => toDo.id !== id));
+  };
 
   return (
     <main className="max-w-3xl w-full p-4 flex flex-1 flex-col justify-center items-center gap-1">
