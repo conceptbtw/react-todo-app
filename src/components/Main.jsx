@@ -18,7 +18,11 @@ const Main = () => {
     );
   };
 
-  const editToDo = () => {};
+  const editToDo = (id, newToDo) => {
+    setToDos(
+      toDos.map((toDo) => (toDo.id === id ? { ...toDo, toDo: newToDo } : toDo))
+    );
+  };
 
   const deleteToDo = (id) => {
     setToDos(toDos.filter((toDo) => toDo.id !== id));
