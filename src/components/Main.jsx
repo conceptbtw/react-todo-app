@@ -29,7 +29,7 @@ const Main = () => {
   };
 
   return (
-    <main className="max-w-3xl w-full p-4 flex flex-1 flex-col justify-center items-center gap-1">
+    <main className="max-w-3xl w-full p-5 flex flex-1 flex-col justify-center items-center gap-1">
       <AddToDo addToDo={addToDo} />
       <ToDoList
         toDos={toDos}

@@ -11,16 +11,17 @@ const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
     setIsEditing(!isEditing);
   };
 
-  const buttonStyles = "size-8 border rounded";
+  const buttonStyles =
+    "size-10 flex justify-center items-center border border-black rounded-full";
 
   return (
-    <li className="w-full p-1 flex justify-center items-center gap-1 border rounded">
+    <li className="w-full p-1 flex justify-center items-center gap-1 border border-black rounded-full">
       <button className={`${buttonStyles}`} onClick={() => toggleToDo(toDo.id)}>
         {toDo.isCompleted && <i className="fa-solid fa-check"></i>}
       </button>
       {isEditing ? (
         <input
-          className="h-8 p-1 flex-1"
+          className="h-10 flex-1 focus:outline-none"
           type="text"
           value={newToDo}
           onChange={(e) => setNewToDo(e.target.value)}
