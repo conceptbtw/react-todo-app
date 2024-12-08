@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="w-full p-5 flex justify-center items-center border-t border-black">
+    <footer className="w-full p-5 flex justify-center items-center border-t border-white/10 bg-black/10">
       <p className="text-center">Copyright © 2024 Illia Movchko</p>
     </footer>
   );
