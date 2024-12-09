@@ -17,14 +17,14 @@ const AddToDo = ({ addToDo }) => {
       onSubmit={handleSubmit}
     >
       <input
-        className="h-10 p-5 flex-1 rounded-full bg-transparent placeholder-neutral-500 focus:outline-none"
+        className="min-w-0 h-8 md:h-10 p-4 md:p-5 flex flex-1 justify-center items-center rounded-full bg-transparent placeholder-neutral-500 focus:outline-none"
         type="text"
         placeholder="Add ToDo..."
         value={toDo}
         onChange={(e) => setToDo(e.target.value)}
       />
       <button
-        className="size-10 flex justify-center items-center border border-white/10 rounded-full bg-white/10"
+        className="size-8 md:size-10 flex justify-center items-center border border-white/10 rounded-full bg-white/10"
         type="submit"
       >
         <i className="fa-solid fa-plus"></i>

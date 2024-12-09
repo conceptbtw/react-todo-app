@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header className="w-full p-5 flex justify-center items-center border-b border-white/10 bg-black/10">
+    <header className="w-full p-4 md:p-5 flex justify-center items-center border-b border-white/10 bg-black/10">
       <h1 className="text-center">📝 ToDo</h1>
     </header>
   );

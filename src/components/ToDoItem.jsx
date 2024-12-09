@@ -1,8 +1,16 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newToDo, setNewToDo] = useState(toDo.toDo);
+
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (isEditing) {
+      inputRef.current?.focus();
+    }
+  }, [isEditing]);
 
   const handleEdit = () => {
     if (isEditing && newToDo.trim()) {
@@ -12,12 +20,12 @@ const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
   };
 
   const buttonStyles =
-    "size-10 flex justify-center items-center border border-white/10 rounded-full";
+    "size-8 md:size-10 flex justify-center items-center border border-white/10 rounded-full";
 
   return (
     <li
       className={`w-full p-1 flex justify-center items-center gap-1 border border-white/10 rounded-full bg-black/10 ${
-        toDo.isCompleted ? "opacity-25" : "opacity-100"
+        toDo.isCompleted ? "opacity-25" : ""
       }`}
     >
       <button
@@ -28,13 +36,20 @@ const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
       </button>
       {isEditing ? (
         <input
-          className="h-10 flex-1 bg-transparent focus:outline-none"
+          ref={inputRef}
+          className="min-w-0 h-8 md:h-10 flex-1 bg-transparent underline truncate focus:outline-none"
           type="text"
           value={newToDo}
           onChange={(e) => setNewToDo(e.target.value)}
         />
       ) : (
-        <p className="flex-1">{toDo.toDo}</p>
+        <p
+          className={`flex-1 truncate ${
+            toDo.isCompleted ? "line-through" : ""
+          }`}
+        >
+          {toDo.toDo}
+        </p>
       )}
       <button
         className={`${buttonStyles} ${
