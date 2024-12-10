@@ -31,6 +31,7 @@ const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
       <button
         className={`${buttonStyles} bg-white/10`}
         onClick={() => toggleToDo(toDo.id)}
+        aria-label="Toggle"
       >
         {toDo.isCompleted && <i className="fa-solid fa-check"></i>}
       </button>
@@ -56,6 +57,7 @@ const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
           isEditing ? "bg-green-500/10" : "bg-white/10"
         }`}
         onClick={handleEdit}
+        aria-label="Edit"
       >
         {isEditing ? (
           <i className="fa-solid fa-save"></i>
@@ -66,6 +68,7 @@ const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
       <button
         className={`${buttonStyles} bg-red-500/10`}
         onClick={() => deleteToDo(toDo.id)}
+        aria-label="Delete"
       >
         <i className="fa-solid fa-trash"></i>
       </button>

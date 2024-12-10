@@ -26,6 +26,7 @@ const AddToDo = ({ addToDo }) => {
       <button
         className="size-8 md:size-10 flex justify-center items-center border border-white/10 rounded-full bg-white/10"
         type="submit"
+        aria-label="Add"
       >
         <i className="fa-solid fa-plus"></i>
       </button>
