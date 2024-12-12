@@ -24,7 +24,7 @@ const AddToDo = ({ addToDo }) => {
         onChange={(e) => setToDo(e.target.value)}
       />
       <button
-        className="size-8 md:size-10 flex justify-center items-center border border-white/10 rounded-full bg-white/10"
+        className="size-8 md:size-10 flex justify-center items-center border border-white/10 outline-1 outline-neutral-200 rounded-full bg-white/10 active:outline"
         type="submit"
         aria-label="Add"
       >

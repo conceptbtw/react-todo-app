@@ -20,7 +20,7 @@ const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
   };
 
   const buttonStyles =
-    "size-8 md:size-10 flex justify-center items-center border border-white/10 rounded-full";
+    "size-8 md:size-10 flex justify-center items-center border border-white/10 outline-1 outline-neutral-200 rounded-full active:outline";
 
   return (
     <li
