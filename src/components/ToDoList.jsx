@@ -2,7 +2,7 @@ import ToDoItem from "./ToDoItem";
 
 const ToDoList = ({ toDos, toggleToDo, editToDo, deleteToDo }) => {
   return (
-    <ul className="w-full flex flex-col justify-center items-center gap-1">
+    <ul className="w-full center flex-col gap-1">
       {toDos.map((toDo) => (
         <ToDoItem
           key={toDo.id}

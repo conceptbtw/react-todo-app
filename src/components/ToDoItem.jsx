@@ -20,11 +20,11 @@ const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
   };
 
   const buttonStyles =
-    "size-8 md:size-10 flex justify-center items-center border border-white/10 outline-1 outline-neutral-200 rounded-full active:outline";
+    "size-8 md:size-10 center border border-white/10 active:outline outline-1 outline-neutral-200 rounded-full";
 
   return (
     <li
-      className={`w-full p-1 flex justify-center items-center gap-1 border border-white/10 rounded-full bg-black/10 ${
+      className={`w-full p-1 center gap-1 border border-white/10 rounded-full bg-black/10 ${
         toDo.isCompleted ? "opacity-25" : ""
       }`}
     >
