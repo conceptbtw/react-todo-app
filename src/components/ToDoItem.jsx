@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, memo } from "react";
 
-const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
+const ToDoItem = memo(({ toDo, toggleToDo, editToDo, deleteToDo }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newToDo, setNewToDo] = useState(toDo.toDo);
 
@@ -20,7 +20,7 @@ const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
   };
 
   const buttonStyles =
-    "size-8 md:size-10 center border border-white/10 active:outline outline-1 outline-neutral-200 rounded-full";
+    "size-8 md:size-10 center border border-white/10 active:border-neutral-200 rounded-full active:scale-90 transition-transform";
 
   return (
     <li
@@ -38,14 +38,14 @@ const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
       {isEditing ? (
         <input
           ref={inputRef}
-          className="min-w-0 h-8 md:h-10 flex-1 bg-transparent underline truncate focus:outline-none"
+          className="min-w-0 h-8 md:h-10 flex-1 outline-none underline truncate bg-transparent"
           type="text"
           value={newToDo}
           onChange={(e) => setNewToDo(e.target.value)}
         />
       ) : (
         <p
-          className={`flex-1 truncate ${
+          className={`flex-1 text-left truncate ${
             toDo.isCompleted ? "line-through" : ""
           }`}
         >
@@ -74,6 +74,6 @@ const ToDoItem = ({ toDo, toggleToDo, editToDo, deleteToDo }) => {
       </button>
     </li>
   );
-};
+});
 
 export default ToDoItem;
