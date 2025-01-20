@@ -18,17 +18,11 @@ const Main = () => {
   };
 
   const toggleToDo = (id) => {
-    setToDos(
-      toDos.map((toDo) =>
-        toDo.id === id ? { ...toDo, isCompleted: !toDo.isCompleted } : toDo
-      )
-    );
+    setToDos(toDos.map((toDo) => (toDo.id === id ? { ...toDo, isCompleted: !toDo.isCompleted } : toDo)));
   };
 
   const editToDo = (id, newToDo) => {
-    setToDos(
-      toDos.map((toDo) => (toDo.id === id ? { ...toDo, toDo: newToDo } : toDo))
-    );
+    setToDos(toDos.map((toDo) => (toDo.id === id ? { ...toDo, toDo: newToDo } : toDo)));
   };
 
   const deleteToDo = (id) => {
@@ -36,14 +30,9 @@ const Main = () => {
   };
 
   return (
-    <main className="max-w-3xl w-full p-4 md:p-5 center flex-1 flex-col gap-1">
+    <main className="max-w-screen-md w-full p-4 md:p-5 center flex-1 flex-col gap-1">
       <AddToDo addToDo={addToDo} />
-      <ToDoList
-        toDos={toDos}
-        toggleToDo={toggleToDo}
-        editToDo={editToDo}
-        deleteToDo={deleteToDo}
-      />
+      <ToDoList toDos={toDos} toggleToDo={toggleToDo} editToDo={editToDo} deleteToDo={deleteToDo} />
     </main>
   );
 };
